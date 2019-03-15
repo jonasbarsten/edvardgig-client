@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
-import {
-  HelpBlock,
-  FormGroup,
-  FormControl,
-  ControlLabel
-} from "react-bootstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./ChangeEmail.css";
 
@@ -70,9 +65,10 @@ export default class ChangeEmail extends Component {
   renderUpdateForm() {
     return (
       <form onSubmit={this.handleUpdateClick}>
-        <FormGroup bsSize="large" controlId="email">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Email</Label>
+          <Input
+            id="email"
             autoFocus
             type="email"
             value={this.state.email}
@@ -82,7 +78,6 @@ export default class ChangeEmail extends Component {
         <LoaderButton
           block
           type="submit"
-          bsSize="large"
           text="Update Email"
           loadingText="Updating…"
           disabled={!this.validatEmailForm()}
@@ -95,23 +90,23 @@ export default class ChangeEmail extends Component {
   renderConfirmationForm() {
     return (
       <form onSubmit={this.handleConfirmClick}>
-        <FormGroup bsSize="large" controlId="code">
-          <ControlLabel>Confirmation Code</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Confirmation Code</Label>
+          <Input
+            id="code"
             autoFocus
             type="tel"
             value={this.state.code}
             onChange={this.handleChange}
           />
-          <HelpBlock>
+          <p>
             Please check your email ({this.state.email}) for the confirmation
             code.
-          </HelpBlock>
+          </p>
         </FormGroup>
         <LoaderButton
           block
           type="submit"
-          bsSize="large"
           text="Confirm"
           loadingText="Confirm…"
           isLoading={this.state.isConfirming}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 import { Link } from "react-router-dom";
 import LoaderButton from "../components/LoaderButton";
 import "./Login.css";
@@ -20,7 +20,7 @@ export default class Login extends Component {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
       [event.target.id]: event.target.value
     });
@@ -44,18 +44,20 @@ export default class Login extends Component {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <FormControl
+          <FormGroup>
+            <Label>Email</Label>
+            <Input
+              id="email"
               autoFocus
               type="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl
+          <FormGroup>
+            <Label>Password</Label>
+            <Input
+              id="password"
               value={this.state.password}
               onChange={this.handleChange}
               type="password"
@@ -64,7 +66,6 @@ export default class Login extends Component {
           <Link to="/login/reset">Forgot password?</Link>
           <LoaderButton
             block
-            bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
             isLoading={this.state.isLoading}

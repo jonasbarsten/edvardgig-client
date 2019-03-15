@@ -22,3 +22,6 @@ input.form-control {
 input[type=file] {
   width: 100%;
 }
+a:hover {
+  cursor: pointer;
+}

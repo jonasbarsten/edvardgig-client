@@ -53,14 +53,12 @@ export default class Settings extends Component {
         <LinkContainer to="/settings/email">
           <LoaderButton
             block
-            bsSize="large"
             text="Change Email"
           />
         </LinkContainer>
         <LinkContainer to="/settings/password">
           <LoaderButton
             block
-            bsSize="large"
             text="Change Password"
           />
         </LinkContainer>

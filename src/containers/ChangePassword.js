@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./ChangePassword.css";
 
@@ -54,26 +54,29 @@ export default class ChangePassword extends Component {
     return (
       <div className="ChangePassword">
         <form onSubmit={this.handleChangeClick}>
-          <FormGroup bsSize="large" controlId="oldPassword">
-            <ControlLabel>Old Password</ControlLabel>
-            <FormControl
+          <FormGroup>
+            <Label>Old Password</Label>
+            <Input
+              id="oldPassword"
               type="password"
               onChange={this.handleChange}
               value={this.state.oldPassword}
             />
           </FormGroup>
           <hr />
-          <FormGroup bsSize="large" controlId="password">
-            <ControlLabel>New Password</ControlLabel>
-            <FormControl
+          <FormGroup>
+            <Label>New Password</Label>
+            <Input
+              id="password"
               type="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup bsSize="large" controlId="confirmPassword">
-            <ControlLabel>Confirm Password</ControlLabel>
-            <FormControl
+          <FormGroup>
+            <Label>Confirm Password</Label>
+            <Input
+              id="confirmPassword"
               type="password"
               onChange={this.handleChange}
               value={this.state.confirmPassword}
@@ -82,7 +85,6 @@ export default class ChangePassword extends Component {
           <LoaderButton
             block
             type="submit"
-            bsSize="large"
             text="Change Password"
             loadingText="Changing…"
             disabled={!this.validateForm()}

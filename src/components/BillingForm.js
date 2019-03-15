@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+// import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import LoaderButton from "./LoaderButton";
 import "./BillingForm.css";
@@ -53,47 +53,50 @@ class BillingForm extends Component {
   render() {
     const loading = this.state.isProcessing || this.props.loading;
 
-    return (
-      <form className="BillingForm" onSubmit={this.handleSubmitClick}>
-        <FormGroup bsSize="large" controlId="storage">
-          <ControlLabel>Storage</ControlLabel>
-          <FormControl
-            min="0"
-            type="number"
-            value={this.state.storage}
-            onChange={this.handleFieldChange}
-            placeholder="Number of notes to store"
-          />
-        </FormGroup>
-        <hr />
-        <FormGroup bsSize="large" controlId="name">
-          <ControlLabel>Cardholder&apos;s name</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.name}
-            onChange={this.handleFieldChange}
-            placeholder="Name on the card"
-          />
-        </FormGroup>
-        <ControlLabel>Credit Card Info</ControlLabel>
-        <CardElement
-          className="card-field"
-          onChange={this.handleCardFieldChange}
-          style={{
-            base: { fontSize: "18px", fontFamily: '"Open Sans", sans-serif' }
-          }}
-        />
-        <LoaderButton
-          block
-          bsSize="large"
-          type="submit"
-          text="Purchase"
-          isLoading={loading}
-          loadingText="Purchasing…"
-          disabled={!this.validateForm()}
-        />
-      </form>
-    );
+
+    return (<div></div>);
+
+    // return (
+    //   <form className="BillingForm" onSubmit={this.handleSubmitClick}>
+    //     <FormGroup bsSize="large" controlId="storage">
+    //       <ControlLabel>Storage</ControlLabel>
+    //       <FormControl
+    //         min="0"
+    //         type="number"
+    //         value={this.state.storage}
+    //         onChange={this.handleFieldChange}
+    //         placeholder="Number of notes to store"
+    //       />
+    //     </FormGroup>
+    //     <hr />
+    //     <FormGroup bsSize="large" controlId="name">
+    //       <ControlLabel>Cardholder&apos;s name</ControlLabel>
+    //       <FormControl
+    //         type="text"
+    //         value={this.state.name}
+    //         onChange={this.handleFieldChange}
+    //         placeholder="Name on the card"
+    //       />
+    //     </FormGroup>
+    //     <ControlLabel>Credit Card Info</ControlLabel>
+    //     <CardElement
+    //       className="card-field"
+    //       onChange={this.handleCardFieldChange}
+    //       style={{
+    //         base: { fontSize: "18px", fontFamily: '"Open Sans", sans-serif' }
+    //       }}
+    //     />
+    //     <LoaderButton
+    //       block
+    //       bsSize="large"
+    //       type="submit"
+    //       text="Purchase"
+    //       isLoading={loading}
+    //       loadingText="Purchasing…"
+    //       disabled={!this.validateForm()}
+    //     />
+    //   </form>
+    // );
   }
 }
 

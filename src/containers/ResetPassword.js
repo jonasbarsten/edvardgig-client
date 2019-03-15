@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
-import {
-  HelpBlock,
-  FormGroup,
-  Glyphicon,
-  FormControl,
-  ControlLabel
-} from "react-bootstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./ResetPassword.css";
 
@@ -80,9 +74,10 @@ export default class ResetPassword extends Component {
   renderRequestCodeForm() {
     return (
       <form onSubmit={this.handleSendCodeClick}>
-        <FormGroup bsSize="large" controlId="email">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Email</Label>
+          <Input
+            id="email"
             autoFocus
             type="email"
             value={this.state.email}
@@ -92,7 +87,6 @@ export default class ResetPassword extends Component {
         <LoaderButton
           block
           type="submit"
-          bsSize="large"
           loadingText="Sending…"
           text="Send Confirmation"
           isLoading={this.state.isSendingCode}
@@ -105,31 +99,34 @@ export default class ResetPassword extends Component {
   renderConfirmationForm() {
     return (
       <form onSubmit={this.handleConfirmClick}>
-        <FormGroup bsSize="large" controlId="code">
-          <ControlLabel>Confirmation Code</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Confirmation Code</Label>
+          <Input
+            id="code"
             autoFocus
             type="tel"
             value={this.state.code}
             onChange={this.handleChange}
           />
-          <HelpBlock>
+          <p>
             Please check your email ({this.state.email}) for the confirmation
             code.
-          </HelpBlock>
+          </p>
         </FormGroup>
         <hr />
-        <FormGroup bsSize="large" controlId="password">
-          <ControlLabel>New Password</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>New Password</Label>
+          <Input
+            id="password"
             type="password"
             value={this.state.password}
             onChange={this.handleChange}
           />
         </FormGroup>
-        <FormGroup bsSize="large" controlId="confirmPassword">
-          <ControlLabel>Confirm Password</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Confirm Password</Label>
+          <Input
+            id="confirmPassword"
             type="password"
             onChange={this.handleChange}
             value={this.state.confirmPassword}
@@ -138,7 +135,6 @@ export default class ResetPassword extends Component {
         <LoaderButton
           block
           type="submit"
-          bsSize="large"
           text="Confirm"
           loadingText="Confirm…"
           isLoading={this.state.isConfirming}
@@ -151,7 +147,7 @@ export default class ResetPassword extends Component {
   renderSuccessMessage() {
     return (
       <div className="success">
-        <Glyphicon glyph="ok" />
+
         <p>Your password has been reset.</p>
         <p>
           <Link to="/login">

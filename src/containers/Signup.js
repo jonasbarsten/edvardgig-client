@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  HelpBlock,
-  FormGroup,
-  FormControl,
-  ControlLabel
-} from "react-bootstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 import { Auth } from "aws-amplify";
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
@@ -81,19 +76,19 @@ export default class Signup extends Component {
   renderConfirmationForm() {
     return (
       <form onSubmit={this.handleConfirmationSubmit}>
-        <FormGroup controlId="confirmationCode" bsSize="large">
-          <ControlLabel>Confirmation Code</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Confirmation Code</Label>
+          <Input
+            id="confirmationCode"
             autoFocus
             type="tel"
             value={this.state.confirmationCode}
             onChange={this.handleChange}
           />
-          <HelpBlock>Please check your email for the code.</HelpBlock>
+          <p>Please check your email for the code.</p>
         </FormGroup>
         <LoaderButton
           block
-          bsSize="large"
           disabled={!this.validateConfirmationForm()}
           type="submit"
           isLoading={this.state.isLoading}
@@ -107,34 +102,36 @@ export default class Signup extends Component {
   renderForm() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Email</Label>
+          <Input
+            id="email"
             autoFocus
             type="email"
             value={this.state.email}
             onChange={this.handleChange}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Password</Label>
+          <Input
+            id="password"
             value={this.state.password}
             onChange={this.handleChange}
             type="password"
           />
         </FormGroup>
-        <FormGroup controlId="confirmPassword" bsSize="large">
-          <ControlLabel>Confirm Password</ControlLabel>
-          <FormControl
+        <FormGroup>
+          <Label>Confirm Password</Label>
+          <Input
+            id="confirmPassword"
             value={this.state.confirmPassword}
             onChange={this.handleChange}
             type="password"
           />
         </FormGroup>
         <LoaderButton
-          block
-          bsSize="large"
+          
           disabled={!this.validateForm()}
           type="submit"
           isLoading={this.state.isLoading}

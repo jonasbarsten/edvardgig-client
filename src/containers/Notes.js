@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API, Storage } from "aws-amplify";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+// import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import { s3Upload } from "../libs/awsLib";
 import config from "../config";
@@ -124,56 +124,59 @@ export default class Notes extends Component {
   }
 
   render() {
-    return (
-      <div className="Notes">
-        {this.state.note &&
-          <form onSubmit={this.handleSubmit}>
-            <FormGroup controlId="content">
-              <FormControl
-                onChange={this.handleChange}
-                value={this.state.content}
-                componentClass="textarea"
-              />
-            </FormGroup>
-            {this.state.note.attachment &&
-              <FormGroup>
-                <ControlLabel>Attachment</ControlLabel>
-                <FormControl.Static>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={this.state.attachmentURL}
-                  >
-                    {this.formatFilename(this.state.note.attachment)}
-                  </a>
-                </FormControl.Static>
-              </FormGroup>}
-            <FormGroup controlId="file">
-              {!this.state.note.attachment &&
-                <ControlLabel>Attachment</ControlLabel>}
-              <FormControl onChange={this.handleFileChange} type="file" />
-            </FormGroup>
-            <LoaderButton
-              block
-              bsStyle="primary"
-              bsSize="large"
-              disabled={!this.validateForm()}
-              type="submit"
-              isLoading={this.state.isLoading}
-              text="Save"
-              loadingText="Saving…"
-            />
-            <LoaderButton
-              block
-              bsStyle="danger"
-              bsSize="large"
-              isLoading={this.state.isDeleting}
-              onClick={this.handleDelete}
-              text="Delete"
-              loadingText="Deleting…"
-            />
-          </form>}
-      </div>
-    );
+
+    return (<div></div>);
+
+    // return (
+    //   <div className="Notes">
+    //     {this.state.note &&
+    //       <form onSubmit={this.handleSubmit}>
+    //         <FormGroup controlId="content">
+    //           <FormControl
+    //             onChange={this.handleChange}
+    //             value={this.state.content}
+    //             componentClass="textarea"
+    //           />
+    //         </FormGroup>
+    //         {this.state.note.attachment &&
+    //           <FormGroup>
+    //             <ControlLabel>Attachment</ControlLabel>
+    //             <FormControl.Static>
+    //               <a
+    //                 target="_blank"
+    //                 rel="noopener noreferrer"
+    //                 href={this.state.attachmentURL}
+    //               >
+    //                 {this.formatFilename(this.state.note.attachment)}
+    //               </a>
+    //             </FormControl.Static>
+    //           </FormGroup>}
+    //         <FormGroup controlId="file">
+    //           {!this.state.note.attachment &&
+    //             <ControlLabel>Attachment</ControlLabel>}
+    //           <FormControl onChange={this.handleFileChange} type="file" />
+    //         </FormGroup>
+    //         <LoaderButton
+    //           block
+    //           bsStyle="primary"
+    //           bsSize="large"
+    //           disabled={!this.validateForm()}
+    //           type="submit"
+    //           isLoading={this.state.isLoading}
+    //           text="Save"
+    //           loadingText="Saving…"
+    //         />
+    //         <LoaderButton
+    //           block
+    //           bsStyle="danger"
+    //           bsSize="large"
+    //           isLoading={this.state.isDeleting}
+    //           onClick={this.handleDelete}
+    //           text="Delete"
+    //           loadingText="Deleting…"
+    //         />
+    //       </form>}
+    //   </div>
+    // );
   }
 }
