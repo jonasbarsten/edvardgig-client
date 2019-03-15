@@ -26,7 +26,7 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/notes/new" exact component={AsyncNewNote} props={childProps} />
     <AuthenticatedRoute path="/notes/:id" exact component={AsyncNotes} props={childProps} />
     <UnauthenticatedRoute path="/login/reset" exact component={AsyncResetPassword} props={childProps} />
-    <AuthenticatedRoute path="/settings/password" exact component={ChangePassword} props={childProps} />
+    <AuthenticatedRoute path="/settings/password" exact component={AsyncChangePassword} props={childProps} />
     <AuthenticatedRoute path="/settings/email" exact component={AsyncChangeEmail} props={childProps} />
     { /* Finally, catch all unmatched routes */ }
     <Route component={AsyncNotFound} />
