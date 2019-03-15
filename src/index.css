@@ -25,3 +25,6 @@ input[type=file] {
 a:hover {
   cursor: pointer;
 }
+.productCard {
+  height: 500px;
+}

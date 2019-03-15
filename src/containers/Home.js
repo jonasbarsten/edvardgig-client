@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
-import { ListGroup, ListGroupItem } from "reactstrap";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { ListGroup, ListGroupItem, Row, Col } from "reactstrap";
+// import { ProductCard } from 'react-ui-cards';
+import { PricingCard } from 'tabler-react'
+import "tabler-react/dist/Tabler.css";
 
 import "./Home.css";
 
@@ -75,15 +77,144 @@ export default class Home extends Component {
           </Link>
         </div>
         <hr />
-        <Card>
-          <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
+        <Row>
+          <Col sm="6">
+          <PricingCard>
+              <PricingCard.Category>{"$99"}</PricingCard.Category>
+              <PricingCard.Price>{"SYNC"} </PricingCard.Price>
+              <PricingCard.AttributeList>
+                  <PricingCard.AttributeItem>
+                      <strong>Free </strong>
+                                {"30 days trial"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Sync timeline"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Sync BPM"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Sync start/stop"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                 {"Sync time signature"}
+                     </PricingCard.AttributeItem>
+                     <PricingCard.AttributeItem hasIcon available>
+                                  {"Unlimited computers"}
+                     </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Automatic fallover redundancy"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Manual offset adjustment"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Choose network interface"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Network jitter compensation"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Extremely low CPU/RAM usage"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Works across Mac and Windows"}
+                    </PricingCard.AttributeItem>
+                    <br />
+                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires ethernet connection between computers"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
+              </PricingCard.AttributeList>
+              <PricingCard.Button>{"Download"} </PricingCard.Button>
+          </PricingCard>
+          </Col>
+          <Col sm="6">
+          <PricingCard>
+              <PricingCard.Category>{"$29"}</PricingCard.Category>
+              <PricingCard.Price>{"SPD-SX"} </PricingCard.Price>
+              <PricingCard.AttributeList>
+                  <PricingCard.AttributeItem>
+                      <strong>Free </strong>
+                                {"30 days trial"}
+                   </PricingCard.AttributeItem>
+
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Seamless integration with Ableton Live"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Use any SPD-SX with initial kit"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Support for multiple SPD-SXs"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"USB or MIDI"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Change kits"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control kit volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample velocity"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Extremely low CPU/RAM usage"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Supports both Mac and Windows"}
+                    </PricingCard.AttributeItem>
+                    <br />
+                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
+              </PricingCard.AttributeList>
+              <PricingCard.Button>{"Download"} </PricingCard.Button>
+          </PricingCard>
+          </Col>
+          <Col sm="6">
+          <PricingCard>
+              <PricingCard.Category>{"$49"}</PricingCard.Category>
+              <PricingCard.Price>{"MIDI"} </PricingCard.Price>
+              <PricingCard.AttributeList>
+                  <PricingCard.AttributeItem>
+                      <strong>Free </strong>
+                                {"30 days trial"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Send MIDI to other computers"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Receive MIDI from other computers"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Send MIDI to multiple computers"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Receive MIDI from multiple computers"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Map incomming MIDI to any mappable parameters"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Extremely low CPU/RAM usage"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Works across Mac and Windows"}
+                    </PricingCard.AttributeItem>
+                    <br />
+                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires ethernet connection between computers"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
+              </PricingCard.AttributeList>
+              <PricingCard.Button>{"Download"} </PricingCard.Button>
+          </PricingCard>
+          </Col>
+        </Row>
+
       </div>
     );
   }
