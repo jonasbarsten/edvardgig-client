@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
+import { LinkContainer } from "react-router-bootstrap";
 import { Elements, StripeProvider } from "react-stripe-elements";
+
+import LoaderButton from "../components/LoaderButton";
 
 import BillingForm from "../components/BillingForm";
 import config from "../config";
@@ -47,6 +50,21 @@ export default class Settings extends Component {
   render() {
     return (
       <div className="Settings">
+        <LinkContainer to="/settings/email">
+          <LoaderButton
+            block
+            bsSize="large"
+            text="Change Email"
+          />
+        </LinkContainer>
+        <LinkContainer to="/settings/password">
+          <LoaderButton
+            block
+            bsSize="large"
+            text="Change Password"
+          />
+        </LinkContainer>
+        <hr />
         <StripeProvider apiKey={config.STRIPE_KEY}>
           <Elements>
             <BillingForm
