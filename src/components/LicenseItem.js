@@ -12,8 +12,9 @@ export default class LicenseItem extends Component {
     const plural = (daysLeft && daysLeft === 1) ? "" : "s";
     const progress = daysLeft ? (100 - ((daysLeft / 30) * 100)) : 100;
     const color = (daysLeft === 0) ? "red" : "yellow";
+    const name = (license && license.product);
 
-    const trialProgress = (type === "trial") ?
+    let trialProgress = (type === "trial") ?
       <React.Fragment>
         <div className="clearfix">
           <div className="float-right">
@@ -27,15 +28,30 @@ export default class LicenseItem extends Component {
         </Progress>
       </React.Fragment> : null;
 
+    // if (type === "permanent") {
+    //   trialProgress =
+    //     <React.Fragment>
+    //       <div className="clearfix">
+    //         <div className="float-right">
+    //           <Text.Small muted>
+    //             permanent
+    //           </Text.Small>
+    //         </div>
+    //       </div>
+    //       <Progress size="xs">
+    //         <Progress.Bar color="green" width={100} />
+    //       </Progress>
+    //     </React.Fragment>;
+    // }
+
     return (
       <Table.Row>
         <Table.Col alignContent="left">
-          <Text>SYNC</Text>
+          <Text>{name}</Text>
         </Table.Col>
         <Table.Col>
-          <div>Jonas Barsten</div>
           <Text size="sm" muted>
-            {type ? `${type} license` : 'ERROR'}
+            {type ? `${type} license` : ''}
           </Text>
         </Table.Col>
         <Table.Col>
@@ -47,6 +63,7 @@ export default class LicenseItem extends Component {
           </Text>
         </Table.Col>
         <Table.Col alignContent="right">
+          {(type === "permanent") ? <Button icon="arrow-up-circle"></Button> : <Button icon="shopping-cart"></Button>}
           <Button icon="download"></Button>
         </Table.Col>
       </Table.Row>

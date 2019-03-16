@@ -16,19 +16,19 @@ export default class Licenses extends Component {
 			  <Table.Header>
 			    <Table.Row>
 			      <Table.ColHeader alignContent="left">Product</Table.ColHeader>
-			      <Table.ColHeader>Owner</Table.ColHeader>
-			      <Table.ColHeader>Trial</Table.ColHeader>
+			      <Table.ColHeader>Type</Table.ColHeader>
+			      <Table.ColHeader>Status</Table.ColHeader>
 			      <Table.ColHeader alignContent="center">Bought</Table.ColHeader>
-			      <Table.ColHeader alignContent="right">Download</Table.ColHeader>
+			      <Table.ColHeader alignContent="right">Actions</Table.ColHeader>
 			    </Table.Row>
 			  </Table.Header>
 			  <Table.Body>
-			  	<LicenseItem license={{type: 'full'}} />
-			  	<LicenseItem license={{type: 'trial', daysLeft: 1}} />
-			  	<LicenseItem />
-			  	<LicenseItem license={{type: 'trial', daysLeft: 0}} />
-			  	<LicenseItem />
-			  	<LicenseItem />
+			  	<LicenseItem license={{product: "SYNC", type: 'permanent'}} />
+			  	<LicenseItem license={{product: "SPD-SX", type: 'trial', daysLeft: 1}} />
+			  	<LicenseItem license={{product: "dLive", type: 'trial', daysLeft: 10}} />
+			  	<LicenseItem license={{product: "VIDEO"}} />
+			  	<LicenseItem license={{product: "Program Change"}} />
+			  	<LicenseItem license={{product: "MIDI", type: 'permanent'}} />
 			  </Table.Body>
 			</Table>
 		);

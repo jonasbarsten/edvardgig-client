@@ -18,7 +18,7 @@ export default class Registrations extends Component {
 			      <Table.ColHeader alignContent="left">Product</Table.ColHeader>
 			      <Table.ColHeader>Machine</Table.ColHeader>
 			      <Table.ColHeader>Registered</Table.ColHeader>
-			      <Table.ColHeader alignContent="center">License file</Table.ColHeader>
+			      <Table.ColHeader alignContent="right">License file</Table.ColHeader>
 			    </Table.Row>
 			  </Table.Header>
 			  <Table.Body>

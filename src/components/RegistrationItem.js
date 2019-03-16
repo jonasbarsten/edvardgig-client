@@ -21,7 +21,7 @@ export default class RegistrationItem extends Component {
             Mar 19, 2018
           </Text>
         </Table.Col>
-        <Table.Col alignContent="center">
+        <Table.Col alignContent="right">
           <Button icon="file-text"></Button>
         </Table.Col>
       </Table.Row>
