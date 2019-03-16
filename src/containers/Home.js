@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { ListGroup, ListGroupItem, Row, Col } from "reactstrap";
 // import { ProductCard } from 'react-ui-cards';
-import { PricingCard } from 'tabler-react';
-import "tabler-react/dist/Tabler.css";
+import { PricingCard, Card, Media, Avatar, Table, Icon } from 'tabler-react';
 
 import "./Home.css";
 
@@ -72,13 +71,34 @@ export default class Home extends Component {
           <Link to="/login" className="btn btn-info btn-lg">
             Login
           </Link>
-          <Link to="/signup" className="btn btn-success btn-lg">
-            Signup
-          </Link>
         </div>
+        <br />
         <hr />
         <Row>
-          <Col sm="6">
+          <Col> 
+            <h1>Used by</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={{ size: 4, offset: 4 }}>
+            <p>Alan Walker</p>
+            <p>Highasakite</p>
+            <p>Karpe</p>
+            <p>Julie Bergan</p>
+            <p>K-391</p>
+          </Col>
+        </Row>
+        <hr />
+        <br />
+        <Row>
+          <Col> 
+            <h1>Software</h1>
+          </Col>
+        </Row>
+        <br />
+        <br />
+        <Row>
+          <Col sm="6" lg="4">
           <PricingCard>
               <PricingCard.Category>{"$99"}</PricingCard.Category>
               <PricingCard.Price>{"SYNC"} </PricingCard.Price>
@@ -130,7 +150,7 @@ export default class Home extends Component {
               <PricingCard.Button>{"Coming soon"} </PricingCard.Button>
           </PricingCard>
           </Col>
-          <Col sm="6">
+          <Col sm="6" lg="4">
           <PricingCard>
               <PricingCard.Category>{"$29"}</PricingCard.Category>
               <PricingCard.Price>{"SPD-SX"} </PricingCard.Price>
@@ -177,7 +197,7 @@ export default class Home extends Component {
               <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
-          <Col sm="6">
+          <Col sm="6" lg="4">
           <PricingCard>
               <PricingCard.Category>{"$49"}</PricingCard.Category>
               <PricingCard.Price>{"MIDI"} </PricingCard.Price>
@@ -215,7 +235,7 @@ export default class Home extends Component {
               <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
-          <Col sm="6">
+          <Col sm="6" lg="4">
           <PricingCard>
               <PricingCard.Category>{"$29"}</PricingCard.Category>
               <PricingCard.Price>{"dLive"} </PricingCard.Price>
@@ -224,7 +244,9 @@ export default class Home extends Component {
                       <strong>Free </strong>
                                 {"30 days trial"}
                    </PricingCard.AttributeItem>
-
+                   <PricingCard.AttributeItem>
+                    {"For dLive C-series mixers"}
+                    </PricingCard.AttributeItem>
                    <PricingCard.AttributeItem hasIcon available>
                                 {"Send MIDI notes when changing scenes"}
                    </PricingCard.AttributeItem>
@@ -241,7 +263,7 @@ export default class Home extends Component {
               <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
-          <Col sm="6">
+          <Col sm="6" lg="4">
           <PricingCard>
               <PricingCard.Category>{"$29"}</PricingCard.Category>
               <PricingCard.Price>{"Program Change"} </PricingCard.Price>
@@ -288,7 +310,7 @@ export default class Home extends Component {
               <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
-          <Col sm="6">
+          <Col sm="6" lg="4">
           <PricingCard>
               <PricingCard.Category>{"$49"}</PricingCard.Category>
               <PricingCard.Price>{"Video"} </PricingCard.Price>

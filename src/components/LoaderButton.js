@@ -7,12 +7,15 @@ export default ({
   text,
   loadingText,
   className = "",
+  color = "",
   disabled = false,
   ...props
 }) =>
   <Button
     className={`LoaderButton ${className}`}
     disabled={disabled || isLoading}
+    color={color}
+    size="lg"
     {...props}
   >
     {isLoading && <Spinner size="sm" color="light" />}

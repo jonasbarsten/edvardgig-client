@@ -39,7 +39,7 @@ class App extends Component {
 
     this.userHasAuthenticated(false);
 
-    this.props.history.push("/login");
+    this.props.history.push("/");
   }
 
   render() {

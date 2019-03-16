@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
-import { FormGroup, Input, Label } from "reactstrap";
+import { FormGroup, Input, Label, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import LoaderButton from "../components/LoaderButton";
 import "./Login.css";
@@ -71,7 +71,14 @@ export default class Login extends Component {
             isLoading={this.state.isLoading}
             text="Login"
             loadingText="Logging in…"
+            color="info"
           />
+          <Button 
+            block 
+            color="success"
+            size="lg"
+            onClick={() => this.props.history.push("/signup")}
+          >Signup</Button>
         </form>
       </div>
     );

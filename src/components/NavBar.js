@@ -22,7 +22,9 @@ export default class NavBar extends Component {
     return (
       <div className="NavBar">
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Edvard Gig</NavbarBrand>
+          <LinkContainer to="/">
+            <NavbarBrand>Edvard Gig</NavbarBrand>
+          </LinkContainer>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -35,18 +37,13 @@ export default class NavBar extends Component {
                       </LinkContainer>
                     </NavItem>
                     <NavItem>
-                      <NavLink className="hover" onClick={this.props.logout}>Log Out</NavLink>
+                      <NavLink className="hover" onClick={this.props.logout}>Logout</NavLink>
                     </NavItem>
                   </Fragment>
                 : <Fragment>
                     <NavItem>
-                      <LinkContainer to="/signup">
-                        <NavLink>Sign Up</NavLink>
-                      </LinkContainer>
-                    </NavItem>
-                    <NavItem>
                       <LinkContainer to="/login">
-                        <NavLink>Sign In</NavLink>
+                        <NavLink>Login</NavLink>
                       </LinkContainer>
                     </NavItem>
                   </Fragment>

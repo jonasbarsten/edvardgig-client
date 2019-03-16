@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormGroup, Input, Label } from "reactstrap";
+import { FormGroup, Input, Label, Button } from "reactstrap";
 import { Auth } from "aws-amplify";
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
@@ -94,6 +94,7 @@ export default class Signup extends Component {
           isLoading={this.state.isLoading}
           text="Verify"
           loadingText="Verifying…"
+          color="success"
         />
       </form>
     );
@@ -131,13 +132,20 @@ export default class Signup extends Component {
           />
         </FormGroup>
         <LoaderButton
-          
+          block
           disabled={!this.validateForm()}
           type="submit"
           isLoading={this.state.isLoading}
           text="Signup"
           loadingText="Signing up…"
+          color="success"
         />
+        <Button 
+          block 
+          color="info"
+          size="lg"
+          onClick={() => this.props.history.push("/login")}
+        >Login</Button>
       </form>
     );
   }
