@@ -12,7 +12,8 @@
     "react-scripts": "^2.1.8",
     "react-stripe-elements": "^2.0.3",
     "reactstrap": "^7.1.0",
-    "tabler-react": "^1.29.0"
+    "tabler-react": "^1.29.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

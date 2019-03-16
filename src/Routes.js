@@ -10,6 +10,7 @@ const AsyncHome = asyncComponent(() => import("./containers/Home"));
 const AsyncNotes = asyncComponent(() => import("./containers/Notes"));
 const AsyncLogin = asyncComponent(() => import("./containers/Login"));
 const AsyncSignup = asyncComponent(() => import("./containers/Signup"));
+const AsyncDashboard = asyncComponent(() => import("./containers/Dashboard"));
 const AsyncResetPassword = asyncComponent(() => import("./containers/ResetPassword"));
 const AsyncChangePassword = asyncComponent(() => import("./containers/ChangePassword"));
 const AsyncChangeEmail = asyncComponent(() => import("./containers/ChangeEmail"));
@@ -23,8 +24,9 @@ export default ({ childProps }) =>
     <UnauthenticatedRoute path="/login" exact component={AsyncLogin} props={childProps} />
     <UnauthenticatedRoute path="/signup" exact component={AsyncSignup} props={childProps} />
     <AuthenticatedRoute path="/settings" exact component={AsyncSettings} props={childProps} />
-    <AuthenticatedRoute path="/notes/new" exact component={AsyncNewNote} props={childProps} />
-    <AuthenticatedRoute path="/notes/:id" exact component={AsyncNotes} props={childProps} />
+    <AuthenticatedRoute path="/dashboard" exact component={AsyncDashboard} props={childProps} />
+{ /*<AuthenticatedRoute path="/notes/new" exact component={AsyncNewNote} props={childProps} />
+    <AuthenticatedRoute path="/notes/:id" exact component={AsyncNotes} props={childProps} /> */}
     <UnauthenticatedRoute path="/login/reset" exact component={AsyncResetPassword} props={childProps} />
     <AuthenticatedRoute path="/settings/password" exact component={AsyncChangePassword} props={childProps} />
     <AuthenticatedRoute path="/settings/email" exact component={AsyncChangeEmail} props={childProps} />

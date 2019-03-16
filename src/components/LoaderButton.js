@@ -7,7 +7,7 @@ export default ({
   text,
   loadingText,
   className = "",
-  color = "",
+  color = "secondary",
   disabled = false,
   ...props
 }) =>

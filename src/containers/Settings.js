@@ -62,15 +62,6 @@ export default class Settings extends Component {
             text="Change Password"
           />
         </LinkContainer>
-        <hr />
-        <StripeProvider apiKey={config.STRIPE_KEY}>
-          <Elements>
-            <BillingForm
-              loading={this.state.isLoading}
-              onSubmit={this.handleFormSubmit}
-            />
-          </Elements>
-        </StripeProvider>
       </div>
     );
   }
