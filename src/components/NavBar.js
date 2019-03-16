@@ -32,8 +32,8 @@ export default class NavBar extends Component {
               {this.props.auth
                 ? <Fragment>
                     <NavItem>
-                      <LinkContainer to="/settings">
-                        <NavLink>Settings</NavLink>
+                      <LinkContainer to="/dashboard">
+                        <NavLink>Account</NavLink>
                       </LinkContainer>
                     </NavItem>
                     <NavItem>
