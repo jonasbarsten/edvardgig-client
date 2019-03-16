@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { ListGroup, ListGroupItem, Row, Col } from "reactstrap";
 // import { ProductCard } from 'react-ui-cards';
-import { PricingCard } from 'tabler-react'
+import { PricingCard } from 'tabler-react';
 import "tabler-react/dist/Tabler.css";
 
 import "./Home.css";
@@ -87,6 +87,11 @@ export default class Home extends Component {
                       <strong>Free </strong>
                                 {"30 days trial"}
                    </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem>
+                    {"Register on "}
+                       <strong>5 </strong>
+                                 {"machines"}
+                    </PricingCard.AttributeItem>
                    <PricingCard.AttributeItem hasIcon available>
                                 {"Sync timeline"}
                    </PricingCard.AttributeItem>
@@ -98,9 +103,6 @@ export default class Home extends Component {
                     </PricingCard.AttributeItem>
                     <PricingCard.AttributeItem hasIcon available>
                                  {"Sync time signature"}
-                     </PricingCard.AttributeItem>
-                     <PricingCard.AttributeItem hasIcon available>
-                                  {"Unlimited computers"}
                      </PricingCard.AttributeItem>
                     <PricingCard.AttributeItem hasIcon available>
                                 {"Automatic fallover redundancy"}
@@ -208,6 +210,147 @@ export default class Home extends Component {
                     <br />
                     <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires ethernet connection between computers"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
+              </PricingCard.AttributeList>
+              <PricingCard.Button>{"Download"} </PricingCard.Button>
+          </PricingCard>
+          </Col>
+          <Col sm="6">
+          <PricingCard>
+              <PricingCard.Category>{"$29"}</PricingCard.Category>
+              <PricingCard.Price>{"dLive"} </PricingCard.Price>
+              <PricingCard.AttributeList>
+                  <PricingCard.AttributeItem>
+                      <strong>Free </strong>
+                                {"30 days trial"}
+                   </PricingCard.AttributeItem>
+
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Seamless integration with Ableton Live"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Use any SPD-SX with initial kit"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Support for multiple SPD-SXs"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"USB or MIDI"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Change kits"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control kit volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample velocity"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Extremely low CPU/RAM usage"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Supports both Mac and Windows"}
+                    </PricingCard.AttributeItem>
+                    <br />
+                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
+              </PricingCard.AttributeList>
+              <PricingCard.Button>{"Download"} </PricingCard.Button>
+          </PricingCard>
+          </Col>
+          <Col sm="6">
+          <PricingCard>
+              <PricingCard.Category>{"$29"}</PricingCard.Category>
+              <PricingCard.Price>{"Program Change"} </PricingCard.Price>
+              <PricingCard.AttributeList>
+                  <PricingCard.AttributeItem>
+                      <strong>Free </strong>
+                                {"30 days trial"}
+                   </PricingCard.AttributeItem>
+
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Seamless integration with Ableton Live"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Use any SPD-SX with initial kit"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Support for multiple SPD-SXs"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"USB or MIDI"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Change kits"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control kit volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample velocity"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Extremely low CPU/RAM usage"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Supports both Mac and Windows"}
+                    </PricingCard.AttributeItem>
+                    <br />
+                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
+              </PricingCard.AttributeList>
+              <PricingCard.Button>{"Download"} </PricingCard.Button>
+          </PricingCard>
+          </Col>
+          <Col sm="6">
+          <PricingCard>
+              <PricingCard.Category>{"$49"}</PricingCard.Category>
+              <PricingCard.Price>{"Video"} </PricingCard.Price>
+              <PricingCard.AttributeList>
+                  <PricingCard.AttributeItem>
+                      <strong>Free </strong>
+                                {"30 days trial"}
+                   </PricingCard.AttributeItem>
+
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Seamless integration with Ableton Live"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Use any SPD-SX with initial kit"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"Support for multiple SPD-SXs"}
+                   </PricingCard.AttributeItem>
+                   <PricingCard.AttributeItem hasIcon available>
+                                {"USB or MIDI"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Change kits"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control kit volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample volume"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Control sample velocity"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Extremely low CPU/RAM usage"}
+                    </PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem hasIcon available>
+                                {"Supports both Mac and Windows"}
+                    </PricingCard.AttributeItem>
+                    <br />
+                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
               <PricingCard.Button>{"Download"} </PricingCard.Button>
