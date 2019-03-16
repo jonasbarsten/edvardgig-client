@@ -127,7 +127,7 @@ export default class Home extends Component {
                     <PricingCard.AttributeItem>{"Requires ethernet connection between computers"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
-              <PricingCard.Button>{"Download"} </PricingCard.Button>
+              <PricingCard.Button>{"Coming soon"} </PricingCard.Button>
           </PricingCard>
           </Col>
           <Col sm="6">
@@ -174,7 +174,7 @@ export default class Home extends Component {
                     <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
-              <PricingCard.Button>{"Download"} </PricingCard.Button>
+              <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
           <Col sm="6">
@@ -212,7 +212,7 @@ export default class Home extends Component {
                     <PricingCard.AttributeItem>{"Requires ethernet connection between computers"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
-              <PricingCard.Button>{"Download"} </PricingCard.Button>
+              <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
           <Col sm="6">
@@ -226,40 +226,19 @@ export default class Home extends Component {
                    </PricingCard.AttributeItem>
 
                    <PricingCard.AttributeItem hasIcon available>
-                                {"Seamless integration with Ableton Live"}
+                                {"Send MIDI notes when changing scenes"}
                    </PricingCard.AttributeItem>
                    <PricingCard.AttributeItem hasIcon available>
-                                {"Use any SPD-SX with initial kit"}
+                                {"Standalone application"}
                    </PricingCard.AttributeItem>
                    <PricingCard.AttributeItem hasIcon available>
-                                {"Support for multiple SPD-SXs"}
+                                {"Exposes virtual MIDI port"}
                    </PricingCard.AttributeItem>
-                   <PricingCard.AttributeItem hasIcon available>
-                                {"USB or MIDI"}
-                    </PricingCard.AttributeItem>
-                    <PricingCard.AttributeItem hasIcon available>
-                                {"Change kits"}
-                    </PricingCard.AttributeItem>
-                    <PricingCard.AttributeItem hasIcon available>
-                                {"Control kit volume"}
-                    </PricingCard.AttributeItem>
-                    <PricingCard.AttributeItem hasIcon available>
-                                {"Control sample volume"}
-                    </PricingCard.AttributeItem>
-                    <PricingCard.AttributeItem hasIcon available>
-                                {"Control sample velocity"}
-                    </PricingCard.AttributeItem>
-                    <PricingCard.AttributeItem hasIcon available>
-                                {"Extremely low CPU/RAM usage"}
-                    </PricingCard.AttributeItem>
-                    <PricingCard.AttributeItem hasIcon available>
-                                {"Supports both Mac and Windows"}
-                    </PricingCard.AttributeItem>
                     <br />
-                    <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
+                    <PricingCard.AttributeItem>{"Only for Mac"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
-              <PricingCard.Button>{"Download"} </PricingCard.Button>
+              <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
           <Col sm="6">
@@ -306,7 +285,7 @@ export default class Home extends Component {
                     <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
-              <PricingCard.Button>{"Download"} </PricingCard.Button>
+              <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
           <Col sm="6">
@@ -353,7 +332,7 @@ export default class Home extends Component {
                     <PricingCard.AttributeItem>{"Requires Ableton Live and Max for Live"}</PricingCard.AttributeItem>
                     <PricingCard.AttributeItem>{"Requires internet connection in trial period"}</PricingCard.AttributeItem>
               </PricingCard.AttributeList>
-              <PricingCard.Button>{"Download"} </PricingCard.Button>
+              <PricingCard.Button>{"Coming soon"}</PricingCard.Button>
           </PricingCard>
           </Col>
         </Row>
