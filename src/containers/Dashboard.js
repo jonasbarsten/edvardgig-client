@@ -10,23 +10,15 @@ import './Dashboard.css';
 export default class Dashboard extends Component {
 
 	state = {
-		content: 'Heisannert'
-	}
-
-	createNote(note) {
-	  return API.post("edvardgig", "/notes", {
-	    body: note
-	  });
+		content: {name: 'Gunnar', age: 12, happy: true}
 	}
 
 	handleSubmit = async event => {
-
 	  try {
-	    const attachment = null;
-
-	    await this.createNote({
-	      attachment,
-	      content: this.state.content
+	    await API.post("edvardgig", "/licenses", {
+	    	body: {
+	    		content: this.state.content
+	    	}
 	    });
 	  } catch (e) {
 	    alert(e);

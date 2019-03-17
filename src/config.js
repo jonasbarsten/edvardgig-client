@@ -9,8 +9,8 @@ const dev = {
   },
   cognito: {
     REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_is3IQD8wW",
-    APP_CLIENT_ID: "1ta7r68r0093u03rb4si0v2j0m",
+    USER_POOL_ID: "us-east-1_ZDcHWMQvz",
+    APP_CLIENT_ID: "5qh8q6fubkftb714ui8d72if1n",
     IDENTITY_POOL_ID: "us-east-1:dbe40d09-e89c-4be5-ac04-f876dccf2628"
   },
   STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK"
@@ -27,8 +27,8 @@ const prod = {
   },
   cognito: {
     REGION: "us-east-1",
-    USER_POOL_ID: "us-east-1_IMzbslMBm",
-    APP_CLIENT_ID: "2iu7pm6dltpeir68dvns56eo9j",
+    USER_POOL_ID: "us-east-1_wuVQz58Cw",
+    APP_CLIENT_ID: "38ss0qdl1in0dvlgmh8qt5c1md",
     IDENTITY_POOL_ID: "us-east-1:2531c017-281e-4ca3-a6d2-8676ea83908f"
   },
   STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK"
