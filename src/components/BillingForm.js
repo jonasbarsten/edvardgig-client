@@ -11,7 +11,6 @@ class BillingForm extends Component {
 
     this.state = {
       name: "",
-      // storage: "",
       isProcessing: false,
       isCardComplete: false
     };
@@ -41,14 +40,9 @@ class BillingForm extends Component {
     event.preventDefault();
 
     const { name } = this.state;
-
     this.setState({ isProcessing: true });
-
     const { token, error } = await this.props.stripe.createToken({ name });
-
     this.setState({ isProcessing: false });
-
-    // this.props.onSubmit(this.state.storage, { token, error });
     this.props.onSubmit(this.props.product, { token, error });
   }
 

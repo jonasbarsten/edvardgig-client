@@ -13,7 +13,8 @@ const dev = {
     APP_CLIENT_ID: "5qh8q6fubkftb714ui8d72if1n",
     IDENTITY_POOL_ID: "us-east-1:dbe40d09-e89c-4be5-ac04-f876dccf2628"
   },
-  STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK"
+  STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK",
+  products: ['SYNC', 'MIDI', 'dLive', 'SPD-SX', 'VIDEO', 'Program Change']
 };
 
 const prod = {
@@ -31,7 +32,8 @@ const prod = {
     APP_CLIENT_ID: "38ss0qdl1in0dvlgmh8qt5c1md",
     IDENTITY_POOL_ID: "us-east-1:2531c017-281e-4ca3-a6d2-8676ea83908f"
   },
-  STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK"
+  STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK",
+  products: ['SYNC', 'MIDI', 'dLive', 'SPD-SX', 'VIDEO', 'Program Change']
 };
 
 // Default to dev if not set

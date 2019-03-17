@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Text, Progress, Dropdown, Icon, Button } from 'tabler-react';
+import { LinkContainer } from "react-router-bootstrap";
 
 import TooltipButton from './TooltipButton';
 
@@ -63,7 +64,12 @@ export default class LicenseItem extends Component {
           </Text>
         </Table.Col>
         <Table.Col alignContent="right">
-          {(type === "permanent") ? <Button icon="arrow-up-circle"></Button> : <Button icon="shopping-cart"></Button>}
+          {(type === "permanent") ? 
+            <Button icon="arrow-up-circle"></Button> :
+            <LinkContainer to={`/pay?product=${name}`}>
+              <Button icon="shopping-cart"></Button>
+            </LinkContainer>
+          }
           <Button icon="download"></Button>
         </Table.Col>
       </Table.Row>

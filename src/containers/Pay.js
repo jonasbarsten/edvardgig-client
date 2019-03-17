@@ -6,12 +6,14 @@ import BillingForm from "../components/BillingForm";
 import config from "../config";
 import "./Pay.css";
 
-const validProducts = ['SYNC', 'MIDI', 'dLive', 'SPD-SX'];
+const validProducts = config.products;
 const prices = [
   {product: 'SYNC', amount: '99'},
   {product: 'MIDI', amount: '49'},
   {product: 'dLive', amount: '29'},
-  {product: 'SPD-SX', amount: '49'}
+  {product: 'SPD-SX', amount: '49'},
+  {product: 'VIDEO', amount: '49'},
+  {product: 'Program Change', amount: '49'}
 ];
 
 export default class Pay extends Component {
