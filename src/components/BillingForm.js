@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, Input, Label } from "reactstrap";
 import { CardElement, injectStripe } from "react-stripe-elements";
+import { Text } from 'tabler-react';
 import LoaderButton from "./LoaderButton";
 import "./BillingForm.css";
 
@@ -10,7 +11,7 @@ class BillingForm extends Component {
 
     this.state = {
       name: "",
-      storage: "",
+      // storage: "",
       isProcessing: false,
       isCardComplete: false
     };
@@ -19,7 +20,7 @@ class BillingForm extends Component {
   validateForm() {
     return (
       this.state.name !== "" &&
-      this.state.storage !== "" &&
+      this.state.product !== "" &&
       this.state.isCardComplete
     );
   }
@@ -47,53 +48,46 @@ class BillingForm extends Component {
 
     this.setState({ isProcessing: false });
 
-    this.props.onSubmit(this.state.storage, { token, error });
+    // this.props.onSubmit(this.state.storage, { token, error });
+    this.props.onSubmit(this.props.product, { token, error });
   }
 
   render() {
     const loading = this.state.isProcessing || this.props.loading;
 
     return (
-      <form className="BillingForm" onSubmit={this.handleSubmitClick}>
-        <FormGroup>
-          <Label>Storage</Label>
-          <Input
-            id="storage"
-            min="0"
-            type="number"
-            value={this.state.storage}
-            onChange={this.handleFieldChange}
-            placeholder="Number of notes to store"
-          />
-        </FormGroup>
+      <div className="BillingForm">
+        <h1>{this.props.product} <Text.Small muted>${this.props.amount}</Text.Small></h1>
         <hr />
-        <FormGroup>
-          <Label>Cardholder&apos;s name</Label>
-          <Input
-            id="name"
-            type="text"
-            value={this.state.name}
-            onChange={this.handleFieldChange}
-            placeholder="Name on the card"
+        <form onSubmit={this.handleSubmitClick}>
+          <FormGroup>
+            <Label>Cardholder&apos;s name</Label>
+            <Input
+              id="name"
+              type="text"
+              value={this.state.name}
+              onChange={this.handleFieldChange}
+              placeholder="Name on the card"
+            />
+          </FormGroup>
+          <Label>Credit Card Info</Label>
+          <CardElement
+            className="card-field"
+            onChange={this.handleCardFieldChange}
+            style={{
+              base: { fontSize: "18px", fontFamily: '"Open Sans", sans-serif' }
+            }}
           />
-        </FormGroup>
-        <Label>Credit Card Info</Label>
-        <CardElement
-          className="card-field"
-          onChange={this.handleCardFieldChange}
-          style={{
-            base: { fontSize: "18px", fontFamily: '"Open Sans", sans-serif' }
-          }}
-        />
-        <LoaderButton
-          block
-          type="submit"
-          text="Purchase"
-          isLoading={loading}
-          loadingText="Purchasing…"
-          disabled={!this.validateForm()}
-        />
-      </form>
+          <LoaderButton
+            block
+            type="submit"
+            text="Purchase"
+            isLoading={loading}
+            loadingText="Purchasing…"
+            disabled={!this.validateForm()}
+          />
+        </form>
+      </div>
     );
   }
 }
