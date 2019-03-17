@@ -1,10 +1,49 @@
 import React, { Component } from 'react';
+import { API } from "aws-amplify";
 import { Table } from 'tabler-react';
+import { Spinner } from 'reactstrap';
+import config from '../config';
 
 import LicenseItem from './LicenseItem';
 
 export default class Licenses extends Component {
+
+	constructor(props) {
+	  super(props);
+
+	  this.state = {
+	    isLoading: true,
+	    userLicenses: []
+	  };
+	}
+
+	async componentDidMount() {
+	  try {
+	    const userLicenses = await this.getLicenses();
+	    this.setState({ userLicenses });
+	  } catch (e) {
+	    alert(e);
+	  }
+	  this.setState({ isLoading: false });
+	}
+
+	getLicenses() {
+	  return API.get("edvardgig", "/licenses");
+	}
+
+
 	render () {
+
+		console.log(this.state);
+
+		if (this.state.isLoading) {
+			return (
+				<div>
+					<Spinner type="grow" color="dark" />
+				</div>
+			);
+		}
+
 		return (
 			<Table
 			  responsive
