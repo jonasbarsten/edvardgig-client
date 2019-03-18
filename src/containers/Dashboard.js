@@ -9,27 +9,10 @@ import './Dashboard.css';
 
 export default class Dashboard extends Component {
 
-	state = {
-		content: {name: 'Gunnar', age: 12, happy: true}
-	}
-
-	handleSubmit = async event => {
-	  try {
-	    await API.post("edvardgig", "/licenses", {
-	    	body: {
-	    		content: this.state.content
-	    	}
-	    });
-	  } catch (e) {
-	    alert(e);
-	  }
-	}
-
 	render() {
 
 		return (
 			<div className="Dashboard">
-				<Button onClick={() => this.handleSubmit()}>GO</Button>
 				<Row>
 					<Col className="text-right">
 						<Button size="lg" onClick={() => this.props.history.push('/settings')}>Settings</Button>

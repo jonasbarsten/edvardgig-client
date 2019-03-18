@@ -7,7 +7,7 @@ import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
 const AsyncHome = asyncComponent(() => import("./containers/Home"));
-const AsyncNotes = asyncComponent(() => import("./containers/Notes"));
+// const AsyncNotes = asyncComponent(() => import("./containers/Notes"));
 const AsyncLogin = asyncComponent(() => import("./containers/Login"));
 const AsyncSignup = asyncComponent(() => import("./containers/Signup"));
 const AsyncDashboard = asyncComponent(() => import("./containers/Dashboard"));
@@ -15,7 +15,7 @@ const AsyncPay = asyncComponent(() => import("./containers/Pay"));
 const AsyncResetPassword = asyncComponent(() => import("./containers/ResetPassword"));
 const AsyncChangePassword = asyncComponent(() => import("./containers/ChangePassword"));
 const AsyncChangeEmail = asyncComponent(() => import("./containers/ChangeEmail"));
-const AsyncNewNote = asyncComponent(() => import("./containers/NewNote"));
+// const AsyncNewNote = asyncComponent(() => import("./containers/NewNote"));
 const AsyncNotFound = asyncComponent(() => import("./containers/NotFound"));
 const AsyncSettings = asyncComponent(() => import("./containers/Settings"));
 

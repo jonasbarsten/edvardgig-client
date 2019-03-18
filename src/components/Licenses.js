@@ -6,15 +6,20 @@ import config from '../config';
 
 import LicenseItem from './LicenseItem';
 
+const products = config.products;
+let productArray = [];
+
+products.map((product) => {
+  if (product.visible) {
+    productArray.push(product.name);
+  }
+});
+
 export default class Licenses extends Component {
 
-	constructor(props) {
-	  super(props);
-
-	  this.state = {
-	    isLoading: true,
-	    userLicenses: []
-	  };
+	state = {
+		isLoading: true,
+	  userLicenses: []
 	}
 
 	async componentDidMount() {
@@ -31,10 +36,7 @@ export default class Licenses extends Component {
 	  return API.get("edvardgig", "/licenses");
 	}
 
-
 	render () {
-
-		console.log(this.state);
 
 		if (this.state.isLoading) {
 			return (
@@ -43,6 +45,8 @@ export default class Licenses extends Component {
 				</div>
 			);
 		}
+
+		const licenses = this.state.userLicenses;
 
 		return (
 			<Table
@@ -62,12 +66,30 @@ export default class Licenses extends Component {
 			    </Table.Row>
 			  </Table.Header>
 			  <Table.Body>
-			  	<LicenseItem license={{product: "SYNC", type: 'permanent'}} />
-			  	<LicenseItem license={{product: "SPD-SX", type: 'trial', daysLeft: 1}} />
-			  	<LicenseItem license={{product: "dLive", type: 'trial', daysLeft: 10}} />
-			  	<LicenseItem license={{product: "VIDEO"}} />
-			  	<LicenseItem license={{product: "Program Change"}} />
-			  	<LicenseItem license={{product: "MIDI", type: 'permanent'}} />
+
+			  	{
+			  		productArray.map((product, count) => {
+			  			let type = "no";
+			  			let daysLeft = 0;
+			  			let currentNumberOfRegistrations = 0;
+			  			let maxRegistrations = 0;
+
+			  			for (var i = 0; i < licenses.length; i++) {
+			  				if (licenses[i].product === product) {
+			  					type = licenses[i].type;
+			  					daysLeft = (licenses[i].daysLeft || 0);
+			  					currentNumberOfRegistrations = (licenses[i].currentNumberOfRegistrations || 0);
+			  					maxRegistrations = (licenses[i].maxRegistrations || 0);
+			  					break;
+			  				}
+			  			}
+
+			  			return (
+			  				<LicenseItem key={count} license={{product, type, daysLeft, currentNumberOfRegistrations, maxRegistrations}} />
+			  			);
+			  		})
+			  	}
+
 			  </Table.Body>
 			</Table>
 		);

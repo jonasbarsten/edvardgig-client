@@ -6,15 +6,12 @@ import BillingForm from "../components/BillingForm";
 import config from "../config";
 import "./Pay.css";
 
-const validProducts = config.products;
-const prices = [
-  {product: 'SYNC', amount: '99'},
-  {product: 'MIDI', amount: '49'},
-  {product: 'dLive', amount: '29'},
-  {product: 'SPD-SX', amount: '49'},
-  {product: 'VIDEO', amount: '49'},
-  {product: 'Program Change', amount: '49'}
-];
+const products = config.products;
+let productArray = [];
+
+products.map((product) => {
+  productArray.push(product.name);
+});
 
 export default class Pay extends Component {
   constructor(props) {
@@ -31,7 +28,7 @@ export default class Pay extends Component {
       this.props.history.push("/dashboard");
     }
 
-    if (validProducts.indexOf(queryParams.product) === -1) {
+    if (productArray.indexOf(queryParams.product) === -1) {
       this.props.history.push("/dashboard");
     }
 
@@ -75,9 +72,9 @@ export default class Pay extends Component {
 
     let amount = 0;
 
-    for (var i = 0; i < prices.length; i++) {
-      if (prices[i].product === product) {
-        amount = prices[i].amount;
+    for (var i = 0; i < products.length; i++) {
+      if (products[i].name === product) {
+        amount = products[i].amount;
         break;
       }
     }

@@ -14,7 +14,20 @@ const dev = {
     IDENTITY_POOL_ID: "us-east-1:dbe40d09-e89c-4be5-ac04-f876dccf2628"
   },
   STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK",
-  products: ['SYNC', 'MIDI', 'dLive', 'SPD-SX', 'VIDEO', 'Program Change']
+  products: [
+    {name: 'SYNC', visible: true, amount: 99},
+    {name: 'MIDI', visible: true, amount: 49},
+    {name: 'dLive', visible: true, amount: 29},
+    {name: 'SPD-SX', visible: true, amount: 49},
+    {name: 'VIDEO', visible: true, amount: 49},
+    {name: 'Program Change', visible: true, amount: 29},
+    {name: 'SYNC extra license', visible: false, amount: 15},
+    {name: 'MIDI extra license', visible: false, amount: 9},
+    {name: 'dLive extra license', visible: false, amount: 29},
+    {name: 'SPD-SX extra license', visible: false, amount: 49},
+    {name: 'VIDEO extra license', visible: false, amount: 49},
+    {name: 'Program Change extra license', visible: false, amount: 29},
+  ]
 };
 
 const prod = {
@@ -33,7 +46,20 @@ const prod = {
     IDENTITY_POOL_ID: "us-east-1:2531c017-281e-4ca3-a6d2-8676ea83908f"
   },
   STRIPE_KEY: "pk_test_n2gv2sv6hqOzVatluoRCBIRK",
-  products: ['SYNC', 'MIDI', 'dLive', 'SPD-SX', 'VIDEO', 'Program Change']
+  products: [
+    {name: 'SYNC', visible: true, amount: 99},
+    {name: 'MIDI', visible: true, amount: 49},
+    {name: 'dLive', visible: true, amount: 29},
+    {name: 'SPD-SX', visible: true, amount: 49},
+    {name: 'VIDEO', visible: true, amount: 49},
+    {name: 'Program Change', visible: true, amount: 29},
+    {name: 'SYNC extra license', visible: false, amount: 15},
+    {name: 'MIDI extra license', visible: false, amount: 9},
+    {name: 'dLive extra license', visible: false, amount: 29},
+    {name: 'SPD-SX extra license', visible: false, amount: 49},
+    {name: 'VIDEO extra license', visible: false, amount: 49},
+    {name: 'Program Change extra license', visible: false, amount: 29},
+  ]
 };
 
 // Default to dev if not set

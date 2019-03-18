@@ -10,12 +10,15 @@ export default class LicenseItem extends Component {
     const license = (this.props.license || null);
     const type = (license && license.type);
     const daysLeft = (type === "trial" && license.daysLeft) ? license.daysLeft : 0;
+    const currentNumberOfRegistrations = (type === "permanent" && license.currentNumberOfRegistrations) ? license.currentNumberOfRegistrations : 0;
+    const maxRegistrations = (type === "permanent" && license.maxRegistrations) ? license.maxRegistrations : 0;
     const plural = (daysLeft && daysLeft === 1) ? "" : "s";
-    const progress = daysLeft ? (100 - ((daysLeft / 30) * 100)) : 100;
+    const trialProgress = daysLeft ? (100 - ((daysLeft / 30) * 100)) : 100;
+    const registrationsProgress = (currentNumberOfRegistrations / maxRegistrations) * 100;
     const color = (daysLeft === 0) ? "red" : "yellow";
     const name = (license && license.product);
 
-    let trialProgress = (type === "trial") ?
+    let licenseStatus = (type === "trial") ?
       <React.Fragment>
         <div className="clearfix">
           <div className="float-right">
@@ -25,25 +28,25 @@ export default class LicenseItem extends Component {
           </div>
         </div>
         <Progress size="xs">
-          <Progress.Bar color={color} width={progress} />
+          <Progress.Bar color={color} width={trialProgress} />
         </Progress>
       </React.Fragment> : null;
 
-    // if (type === "permanent") {
-    //   trialProgress =
-    //     <React.Fragment>
-    //       <div className="clearfix">
-    //         <div className="float-right">
-    //           <Text.Small muted>
-    //             permanent
-    //           </Text.Small>
-    //         </div>
-    //       </div>
-    //       <Progress size="xs">
-    //         <Progress.Bar color="green" width={100} />
-    //       </Progress>
-    //     </React.Fragment>;
-    // }
+    if (type === "permanent") {
+      licenseStatus =
+        <React.Fragment>
+          <div className="clearfix">
+            <div className="float-right">
+              <Text.Small muted>
+                {currentNumberOfRegistrations} / {maxRegistrations} registrations
+              </Text.Small>
+            </div>
+          </div>
+          <Progress size="xs">
+            <Progress.Bar color="green" width={registrationsProgress} />
+          </Progress>
+        </React.Fragment>;
+    }
 
     return (
       <Table.Row>
@@ -56,7 +59,7 @@ export default class LicenseItem extends Component {
           </Text>
         </Table.Col>
         <Table.Col>
-          {trialProgress}
+          {licenseStatus}
         </Table.Col>
         <Table.Col alignContent="center">
           <Text size="sm" muted>
