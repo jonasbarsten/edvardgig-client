@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Table, Text, Progress, Dropdown, Icon, Button } from 'tabler-react';
+import { Table, Text, Progress, Button } from 'tabler-react';
 import { LinkContainer } from "react-router-bootstrap";
 
-import TooltipButton from './TooltipButton';
+// import TooltipButton from './TooltipButton';
 
 export default class LicenseItem extends Component {
   render () {

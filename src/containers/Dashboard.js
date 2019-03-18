@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'reactstrap';
-import { API } from "aws-amplify";
 
 import Licenses from '../components/Licenses';
 import Registrations from '../components/Registrations';

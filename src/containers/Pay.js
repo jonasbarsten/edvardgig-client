@@ -7,10 +7,8 @@ import config from "../config";
 import "./Pay.css";
 
 const products = config.products;
-let productArray = [];
-
-products.map((product) => {
-  productArray.push(product.name);
+const productArray = products.map((product) => {
+  return product.name;
 });
 
 export default class Pay extends Component {

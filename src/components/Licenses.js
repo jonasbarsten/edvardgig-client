@@ -7,11 +7,11 @@ import config from '../config';
 import LicenseItem from './LicenseItem';
 
 const products = config.products;
-let productArray = [];
-
-products.map((product) => {
+const productArray = products.map((product) => {
   if (product.visible) {
-    productArray.push(product.name);
+    return product.name;
+  } else {
+  	return null;
   }
 });
 
@@ -69,6 +69,11 @@ export default class Licenses extends Component {
 
 			  	{
 			  		productArray.map((product, count) => {
+
+			  			if (!product) {
+			  				return null;
+			  			}
+
 			  			let type = "no";
 			  			let daysLeft = 0;
 			  			let currentNumberOfRegistrations = 0;

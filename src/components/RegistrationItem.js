@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Text, Progress, Dropdown, Icon, Button } from 'tabler-react';
-
-import TooltipButton from './TooltipButton';
+import { Table, Text, Button } from 'tabler-react';
 
 export default class RegistrationItem extends Component {
   render () {
